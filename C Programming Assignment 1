@@ -1,0 +1,206 @@
+                           // Assignment-01
+            
+// Que 1. What do you mean arrays give one example of array and how you can declared an array?
+// Ans. An array is a collection of similar data types stored in continuous memory locations.It is used to store multiple values in a single variable.
+   #include <stdio.h>
+
+int main() {
+    // Declare and initialize an array
+    int scores[4] = {75, 88, 90, 82};
+
+    // Display the array elements
+    printf("The scores are:\n");
+    
+    for(int i = 0; i < 4; i++) {
+        printf("%d ", scores[i]);
+    }
+
+    return 0;
+}
+//  Output -  The scores are: 75 88 90 82
+
+  
+
+//  Que 2. What do you mean by functions? Write the types of functions and give one example in code of each type.
+// ans.A function is a block of code that performs a specific task.          Types of Functions:  1.Library Functions - printf(), sqrt(), scanf() etc.                2. User- defined Functions 
+    #include <stdio.h>
+
+// user-defined function
+void greet() {
+    printf("Hello, welcome to C programming!\n");
+}
+
+int main() {
+    // calling library function
+    printf("This is an example of a function.\n");
+    
+    // calling user-defined function
+    greet();
+    
+    return 0;
+}
+    //  Output - This is an example of a function.
+             //  Hello, welcome to C programming!
+
+
+// Que 3. What do you mean by Pointers ? Write a code how you can initialise the pointer.
+// Ans. A pointer is a variable that stores the address of another variable.It is used to access the value of a variable indirectly.
+    #include <stdio.h>
+
+int main() {
+    int num = 25;      // normal variable
+    int *ptr;          // pointer variable declaration
+
+    ptr = &num;        // pointer initialization with address of num
+
+    printf("Value of num = %d\n", num);
+    printf("Address of num = %p\n", &num);
+    printf("Value stored in pointer ptr = %p\n", ptr);
+    printf("Value pointed by ptr = %d\n", *ptr);
+
+    return 0;
+}
+    //  Output - Value of num = 25
+// Address of num = 0x7ffee0c7aabc   (example memory address)
+// Value stored in pointer ptr = 0x7ffee0c7aabc
+// Value pointed by ptr = 25
+
+
+//  Que 4. What are the types of array? Write in a code 1D & 2D included.
+// Ans. An array is a collection of elements of the same data type.              There are mainly two types of arrays in C- 1. One-Dimensional Array (1D) Ex.-
+    #include <stdio.h>
+
+int main() {
+    int marks[5] = {85, 90, 78, 88, 92}; // 1D array
+
+    printf("1D Array Elements:\n");
+    for(int i = 0; i < 5; i++) {
+        printf("%d ", marks[i]);
+    }
+
+    return 0;
+}
+    // Output - 1D Array Elements:85 90 78 88 92
+
+// 2. Two-Dimensional Array Example:
+       #include <stdio.h>
+     int main() {
+    int matrix[2][3] = { {1, 2, 3}, {4, 5, 6} }; // 2D array
+
+    printf("\n2D Array Elements:\n");
+    for(int i = 0; i < 2; i++) {
+        for(int j = 0; j < 3; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");  // new line after each row
+    }
+  return 0;
+}
+// Output - 2D Array Elements:
+            // 1 2 3
+            // 4 5 6
+
+
+     //  Que 5. Explain the types of Operators in code.
+    //   ans. There are 8 types of operators in C:
+
+#include <stdio.h>
+int main() {
+    int a = 10, b = 5, result;
+
+    // 1. Arithmetic Operators: For math operations (+, -, *, /, %).
+      printf("Arithmetic Operators:\n");     
+    printf("a + b = %d\n", a + b);
+    printf("a - b = %d\n", a - b);
+    printf("a * b = %d\n", a * b);
+    printf("a / b = %d\n", a / b);
+    printf("a %% b = %d\n\n", a % b);
+
+    // 2. Relational Operators : For comparison (>, <, ==, !=).
+    printf("Relational Operators:\n");
+    printf("a > b = %d\n", a > b);
+    printf("a < b = %d\n", a < b);
+    printf("a == b = %d\n\n", a == b);
+
+    // 3. Logical Operators : For conditions (&&, ||, !).
+    printf("Logical Operators:\n");
+    printf("(a > b) && (b > 0) = %d\n", (a > b) && (b > 0));
+    printf("(a < b) || (b > 0) = %d\n", (a < b) || (b > 0));
+    printf("!(a == b) = %d\n\n", !(a == b));
+
+    // 4. Assignment Operators : To assign values (=, +=, -=).
+    printf("Assignment Operators:\n");
+    result = a;     // simple assignment
+    result += b;    // result = result + b
+    printf("Result after += : %d\n\n", result);
+
+   // 5. Increment and Decrement Operators : Increase or decrease by 1 (++ , --).
+    printf("Increment/Decrement Operators:\n");
+    a++;
+    b--;
+    printf("a after ++ = %d\n", a);
+    printf("b after -- = %d\n\n", b);
+
+    // 6. Bitwise Operators : Work on bits (&, |, ^, <<, >>).
+    printf("Bitwise Operators:\n");
+    printf("a & b = %d\n", a & b);
+    printf("a | b = %d\n", a | b);
+    printf("a ^ b = %d\n", a ^ b);
+    printf("a << 1 = %d\n", a << 1);
+    printf("a >> 1 = %d\n\n", a >> 1);
+
+    // 7. Conditional (Ternary) Operator : Decision making (? : ).
+    printf("Conditional (Ternary) Operator:\n");
+    result = (a > b) ? a : b;
+    printf("Greater number = %d\n\n", result);
+
+    // 8. Special Operators : Special tasks (sizeof, &, *).
+    printf("Special Operators:\n");
+    printf("Size of a = %lu bytes\n", sizeof(a));
+    printf("Address of a = %p\n", &a);
+
+    return 0;
+}
+       //   Output
+       
+// Arithmetic Operators:
+// a + b = 15
+// a - b = 5
+// a * b = 50
+// a / b = 2
+// a % b = 0
+
+// Relational Operators:
+// a > b = 1
+// a < b = 0
+// a == b = 0
+
+// Logical Operators:
+// (a > b) && (b > 0) = 1
+// (a < b) || (b > 0) = 1
+// !(a == b) = 1
+
+// Assignment Operators:
+// Result after += : 15
+
+// Increment/Decrement Operators:
+// a after ++ = 11
+// b after -- = 4
+
+// Bitwise Operators:
+// a & b = 0
+// a | b = 15
+// a ^ b = 15
+// a << 1 = 22
+// a >> 1 = 5
+
+// Conditional (Ternary) Operator:
+// Greater number = 11
+
+// Special Operators:
+// Size of a = 4 bytes
+// Address of a = (some memory address)
+
+
+
+
