@@ -1,0 +1,94 @@
+
+
+ChatGPT
+You said:
+Assignment 2 - C programming 
+
+1. What do you mean by structures?
+2. What do you mean h array & pointers array?
+3. Compare two structures variables by using the comparison operator ( Not equal & equal).
+4. Perform an arithmetic operations on structures.
+ChatGPT said:
+Here are the answers to your assignment questions in a clear and simple way, including examples in C.
+
+1. What do you mean by structures?
+A structure (struct) in C is a user-defined data type that allows you to store multiple variables of different data types under one name.
+
+It groups related data together.
+
+Useful when you need to represent a record (like a student, employee, book, etc.).
+
+Example
+
+struct Student {
+    int roll_no;
+    char name[20];
+    float marks;
+};
+2. What do you mean by an array & pointer array?
+✅ Array
+An array is a collection of elements of the same data type, stored in continuous memory.
+
+Example:
+
+int numbers[5] = {10, 20, 30, 40, 50};
+✅ Pointer Array (Array of Pointers)
+An array that stores memory addresses (pointers) instead of data values.
+
+Example:
+
+int a = 10, b = 20, c = 30;
+int *ptr[3] = {&a, &b, &c};
+Here, ptr is an array containing addresses of a, b, and c.
+
+3. Compare two structure variables using comparison operators (equal & not equal)
+You cannot directly compare structures using == or != operators in C.
+
+Instead, you compare each member individually.
+
+Example Program
+
+#include <stdio.h>
+#include <string.h>
+
+struct Student {
+    int roll;
+    char name[20];
+};
+
+int main() {
+    struct Student s1 = {1, "John"};
+    struct Student s2 = {1, "John"};
+
+    // Comparing structures manually
+    if (s1.roll == s2.roll && strcmp(s1.name, s2.name) == 0) {
+        printf("Structures are EQUAL\n");
+    } else {
+        printf("Structures are NOT EQUAL\n");
+    }
+
+    return 0;
+}
+4. Perform arithmetic operations on structures
+C does not support arithmetic operations directly on structures.
+But you can perform arithmetic on structure members.
+
+Example Program
+
+#include <stdio.h>
+
+struct Numbers {
+    int num1;
+    int num2;
+};
+
+int main() {
+    struct Numbers n = {10, 5};
+
+    printf("Addition: %d\n", n.num1 + n.num2);
+    printf("Subtraction: %d\n", n.num1 - n.num2);
+    printf("Multiplication: %d\n", n.num1 * n.num2);
+    printf("Division: %d\n", n.num1 / n.num2);
+
+    return 0;
+}
